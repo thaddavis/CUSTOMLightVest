@@ -10187,3 +10187,65 @@ Completed 200 OK in 131ms (Views: 129.1ms | ActiveRecord: 0.0ms)
 
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mSubscription Load (0.6ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+Started GET "/users/confirmation?confirmation_token=NxdxNU1riFh-oKnyYPYj" for ::1 at 2016-08-10 00:39:44 -0400
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"NxdxNU1riFh-oKnyYPYj"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "NxdxNU1riFh-oKnyYPYj"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", 2016-08-10 04:39:44 UTC], ["updated_at", 2016-08-10 04:39:44 UTC], ["id", 23]]
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."stripe_id" = ? LIMIT ?[0m  [["stripe_id", "starter_plan"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "subscriptions" ("user_id", "plan_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 23], ["plan_id", 1], ["created_at", 2016-08-10 04:40:29 UTC], ["updated_at", 2016-08-10 04:40:29 UTC]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "versions" ("item_type", "item_id", "event", "created_at", "object_changes") VALUES (?, ?, ?, ?, ?)[0m  [["item_type", "Subscription"], ["item_id", 4], ["event", "create"], ["created_at", 2016-08-10 04:40:29 UTC], ["object_changes", "---\nid:\n- \n- 4\nuser_id:\n- \n- 23\nplan_id:\n- \n- 1\ncreated_at:\n- \n- 2016-08-10 04:40:29.168114000 Z\nupdated_at:\n- \n- 2016-08-10 04:40:29.168114000 Z\n"]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 44321ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-10 00:40:29 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_flash_messages.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (2.8ms)
+Completed 200 OK in 232ms (Views: 194.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-10 00:40:38 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhLRiKhANurSFS1VV0/eLL7gKVlb4ygE1E0HylzIHDE9Ae9zcP4ceF93Feoeo03cwLUai5iigofbcntLpj89Qw==", "user"=>{"email"=>"n@n.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "n@n.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-08-10 04:40:38 UTC], ["last_sign_in_at", 2016-08-10 04:40:38 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", 2016-08-10 04:40:38 UTC], ["id", 23]]
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."stripe_id" = ? LIMIT ?[0m  [["stripe_id", "starter_plan"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "subscriptions" ("user_id", "plan_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 23], ["plan_id", 1], ["created_at", 2016-08-10 04:40:38 UTC], ["updated_at", 2016-08-10 04:40:38 UTC]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "versions" ("item_type", "item_id", "event", "created_at", "object_changes") VALUES (?, ?, ?, ?, ?)[0m  [["item_type", "Subscription"], ["item_id", 5], ["event", "create"], ["created_at", 2016-08-10 04:40:38 UTC], ["object_changes", "---\nid:\n- \n- 5\nuser_id:\n- \n- 23\nplan_id:\n- \n- 1\ncreated_at:\n- \n- 2016-08-10 04:40:38.460224000 Z\nupdated_at:\n- \n- 2016-08-10 04:40:38.460224000 Z\n"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 346ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/home" for ::1 at 2016-08-10 00:40:38 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_flash_messages.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 114ms (Views: 95.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-10 00:40:44 -0400
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."user_id" = ? LIMIT ?[0m  [["user_id", 23], ["LIMIT", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (86.2ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_flash_messages.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (2.5ms)
+Completed 200 OK in 208ms (Views: 203.6ms | ActiveRecord: 0.6ms)
+
+

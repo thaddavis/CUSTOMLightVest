@@ -31,9 +31,7 @@ class User < ApplicationRecord
     end
 
     def set_default_subscription
-
       plan = Plan.find_by_stripe_id('starter_plan')
-      binding.pry
       subscription = Subscription.new(
           plan_id: plan.id,
           user_id: self.id
