@@ -43,4 +43,25 @@ Step #2 Setup Rspec (Testing Environment)
 Step #3 Install Pundit
   1. gem 'pundit'
   2. rails g pundit:install
-  3.
+
+Step #4 Install Bootstrap and Customize Devise Views
+
+Step #5 Install Papertrail
+  1. rails generate paper_trail:install
+  2. rake db:migrate
+  3. user in rails c ie: @sale.versions
+  4. add config/initializers/paper_trail.rb
+  5. place:   PaperTrail.config.track_associations = false
+
+Step #6 Add custom services
+  1. mkdir app/services
+  2. add to app/config/application.rb
+
+Step #7 Add Plans
+  # Service for creating new plan on Stripe Side and Server Side
+  CreatePlan.call(stripe_id: 'starter_plan', name: 'Starter Plan', amount: 0, interval: 'month', description: '<h4 class="text-center">Starter</h4><ul><li> FREE </li><li> Trial usage of our tools </li><li> Automated financial advice </li></ul>', published: true)
+  CreatePlan.call(stripe_id: 'premium_plan', name: 'Premium Plan', amount: 10000, interval: 'month', description: '<h4 class="text-center">Premium</h4><ul><li> $100.00 + monthly consultation fees </li><li> Unlimited use of all our software tools </li><li> 90-day money-back guarantee </li><li> Customized financial advice </li></ul>', published: true)
+  CreatePlan.call(stripe_id: 'gold_plan', name: 'Gold Plan', amount: 100000, interval: 'month', description: '<h4 class="text-center">Gold</h4><ul><li> $200.00 + monthly consultation fees </li><li> 90-day money-back guarantee </li><li> Personalized financial advice </li></ul>', published: true)
+
+Step #8 Configure Stripe
+  1. Configure config/initializers/stripe.rb initializers
