@@ -6,9 +6,9 @@
 
 <div class="row">
   <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><%= link_to "Profile", edit_user_path(:id => current_user.id) %></li>
-    <li role="presentation"><%= link_to "Payment", payment_profile_path(current_user.payment_profile.id) %></li>
-    <li role="presentation"><%= link_to "Billing", '' %></li>
+    <li role="presentation" class="active"><%= link_to "Profile", edit_user_registration_path %></li>
+    <li role="presentation"><%= link_to "Payment", edit_payment_profile_path(current_user.payment_profile.id) %></li>
+    <li role="presentation"><%= link_to "Billing", payment_profile_path(current_user.payment_profile.id) %></li>
   </ul>
   <div class="col-md-6 col-md-offset-3">
 

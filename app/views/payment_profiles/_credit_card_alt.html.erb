@@ -1,0 +1,65 @@
+<!-- -->
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <br/>
+  <h3>Card Info </h3>
+  <br/>
+  <p>You currently have <%= pluralize(!@cards ? 0 : @cards.count, "card") %> on file with us: </p>
+  <% if @cards %>
+    <% @cards.each do |c| %>
+      <div class="col-md-12 well">
+        <div class="form-group">
+          <label class="control-label">Card With Expiration DateTime (MM/YYYY): </label>
+          <br/>
+          <%= c.exp_month %>
+          <span> / </span>
+          <%= c.exp_year %>
+        </div>
+        <label class="control-label">Card With Last 4 Digits: </label>
+        <div class="form-group">
+          **** **** **** <%= c.last4 %>
+        </div>
+
+        <%= link_to 'Cancel Subscription', cancel_subscription_path(), :id => "cancel_subscription",  :method => 'post', :data => { :confirm => 'Are you sure you want to cancel your subscription?' } %>
+
+        <p style="font-size: 10px;">Canceling your subscription will remove your card from our system and will place you on our starter plan (which is free).</p>
+
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+
+  <button type="button" class="btn btn-info form-control" data-toggle="collapse" data-target="#add-credit-card-form">Add a card</button>
+  <div id="add-credit-card-form" class="collapse">
+    <div class="col-md-12">
+      <br/>
+      <div class="well">
+        <h3 class="text-center">Card Details</h3>
+        <h4 class="text-center payment-errors"></h4>
+        <div class='form-group'>
+            <label class="control-label" for="number">Card Number</label>
+            <input type="text" class="form-control" data-stripe="number" placeholder="**** **** **** ****" pattern="[\d ]*"/>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="cvc">CVC</label>
+          <input type="text" style="margin: 0 auto; width: 3em;" size="3" data-stripe="cvc" id="cvc" placeholder="***" pattern="\d*"/>
+          <%= image_tag("credit-card-icon.png", :size => "30x30", alt: "Credit Card Icon") %>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Exp (MM/YYYY)</label>
+          <br/>
+          <input type="text" size="2" id="exp-month" data-stripe="exp-month" placeholder="MM" pattern="\d*" style="width: 4em"/>
+          <span> / </span>
+          <input type="text" size="4" id="exp-year" data-stripe="exp-year" placeholder="YYYY" pattern="\d*" style="width: 8em"/>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,1 +1,0 @@
-json.partial! "payment_profiles/payment_profile", payment_profile: @payment_profile

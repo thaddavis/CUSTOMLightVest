@@ -26523,3 +26523,5 @@ Processing by PaymentProfilesController#show as HTML
 Completed 200 OK in 161ms (Views: 137.6ms | ActiveRecord: 1.3ms)
 
 
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Witherberry/src/railsprojects/CUSTOMLightVest/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Witherberry/src/railsprojects/CUSTOMLightVest/config/environment.rb:5)

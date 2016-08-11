@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
-  has_one :subscription, :dependent => :destroy
+  has_many :subscriptions, :dependent => :destroy
   has_one :payment_profile, :dependent => :destroy
 
   validates :first_name, presence: true
@@ -22,8 +22,8 @@ class User < ApplicationRecord
 
   after_validation :StripeCustomerOnSignupError, :if => :new_record?
   before_save :set_default_role, :if => :new_record?
-  after_save :set_default_subscription
   after_save :set_default_payment_profile
+  after_save :set_default_subscription
 
 
   private
@@ -34,9 +34,17 @@ class User < ApplicationRecord
     def set_default_subscription
       if !Subscription.find_by_user_id(self.id)
         plan = Plan.find_by_stripe_id('starter_plan')
+
+        customer = FetchStripeCustomer.call(self)
+        if self.payment_profile.errors.any?
+          return false
+        end
+        customerJSON = JSON.parse(customer.to_s)
+
         subscription = Subscription.new(
             plan_id: plan.id,
-            user_id: self.id
+            user_id: self.id,
+            stripe_id: customerJSON['subscriptions']['data'].first['id']
         )
         subscription.save!
       end

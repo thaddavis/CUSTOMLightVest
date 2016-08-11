@@ -1,9 +1,0 @@
-<br />
-<div class="well">
-  <%= fields_for :plan, @user.subscription do |p| %>
-    <label>Current Plan: </label>
-    <br />
-    <%= collection_select( nil, :plan_id, Plan.all.order(:amount), :stripe_id, :name, {:selected => @user.subscription.plan.stripe_id, :prompt => true}, {class: 'form-control col-md-6'}) %>
-    <br />
-  <% end %>
-</div>

@@ -1,6 +1,43 @@
-<h1>Editing Payment Profile</h1>
+<%= javascript_include_tag "https://js.stripe.com/v2/" %>
 
-<%= render 'form', payment_profile: @payment_profile %>
+<h2>Edit Payment Details</h2>
 
-<%= link_to 'Show', @payment_profile %> |
-<%= link_to 'Back', payment_profiles_path %>
+<hr class="col-md-10 col-md-offset-1"></hr>
+
+<div class="row">
+  <ul class="nav nav-tabs">
+    <li role="presentation"><%= link_to "Profile", edit_user_registration_path %></li>
+    <li role="presentation" class="active"><%= link_to "Payment", edit_payment_profile_path(current_user.payment_profile.id) %></li>
+    <li role="presentation"><%= link_to "Billing", payment_profile_path(current_user.payment_profile.id) %></li>
+  </ul>
+
+  <div class="col-md-6 col-md-offset-3">
+
+      <br/>
+      <% if @payment_profile.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <h2><%= pluralize(@payment_profile.errors.count, "error") %> occurred:</h2>
+          <ul>
+          <% @payment_profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= render partial: 'plans' %>
+
+      <%= render partial: 'credit_card' %>
+
+      ***
+      Allow user to switch plan and add/remove/set default cards.
+      If user tries to switch plan with no default card then take to
+      new card form
+      ***
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_z3yrL4LC2PGjjgjDRnfim1DK');
+</script>

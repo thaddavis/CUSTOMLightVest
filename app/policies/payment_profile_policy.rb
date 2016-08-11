@@ -14,6 +14,10 @@ class PaymentProfilePolicy
     @current_user.admin? || @model.user_id == @current_user.id
   end
 
+  def edit?
+    @current_user.admin? || @model.user_id == @current_user.id
+  end
+
   def update?
     @current_user.admin? || @model.user_id == @current_user.id
   end
