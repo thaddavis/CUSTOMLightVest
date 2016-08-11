@@ -5,25 +5,26 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
-  has_one :subscription
+  has_one :subscription, :dependent => :destroy
+  has_one :payment_profile, :dependent => :destroy
 
   validates :first_name, presence: true
   validates :middle_name, presence: false
   validates :last_name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+                    format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 
   validates :password, presence: true, length: { minimum: 6 },   allow_nil: true
   validates :username, presence: true, length: { minimum: 6 }
 
   enum role: [:user, :editor, :admin]
 
+  after_validation :StripeCustomerOnSignupError, :if => :new_record?
   before_save :set_default_role, :if => :new_record?
   after_save :set_default_subscription
+  after_save :set_default_payment_profile
 
-  validate :StripeCustomerOnSignupError
 
   private
     def set_default_role
@@ -31,15 +32,25 @@ class User < ApplicationRecord
     end
 
     def set_default_subscription
-      plan = Plan.find_by_stripe_id('starter_plan')
-      subscription = Subscription.new(
-          plan_id: plan.id,
-          user_id: self.id
-      )
-      subscription.save!
+      if !Subscription.find_by_user_id(self.id)
+        plan = Plan.find_by_stripe_id('starter_plan')
+        subscription = Subscription.new(
+            plan_id: plan.id,
+            user_id: self.id
+        )
+        subscription.save!
+      end
+    end
+
+    def set_default_payment_profile
+      if !PaymentProfile.find_by_user_id(self.id)
+        payment_profile = PaymentProfile.new( user_id: self.id )
+        payment_profile.save!
+      end
     end
 
     def StripeCustomerOnSignupError
+      binding.pry
       customer = CreateStripeCustomerOnSignup.call(self)
 
       if customer.errors[:stripe].nil?

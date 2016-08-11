@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809180500) do
+ActiveRecord::Schema.define(version: 20160810200844) do
+
+  create_table "payment_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_payment_profiles_on_user_id"
+  end
 
   create_table "plans", force: :cascade do |t|
     t.string   "stripe_id"

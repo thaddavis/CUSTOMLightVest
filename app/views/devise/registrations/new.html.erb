@@ -1,36 +1,41 @@
 <%= devise_error_messages! %>
 
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up</h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
     <%= form_for resource, as: resource_name, url: registration_path(resource_name), validate: true do |f| %>
 
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: 'form-control' %>
 
+        <br />
 
-        <%= f.label :username %><br />
+        <%= f.label :username %>
         <%= f.text_field :username, class: 'form-control' %>
 
+        <br />
 
-        <%= f.label :first_name %><br />
+        <%= f.label :first_name %>
         <%= f.text_field :first_name, class: 'form-control' %>
 
+        <br />
 
-        <%= f.label :last_name %><br />
+        <%= f.label :last_name %>
         <%= f.text_field :last_name, class: 'form-control' %>
 
+        <br />
 
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
+        <% end %>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
 
+        <br />
 
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
 
         <br/>
