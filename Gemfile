@@ -28,6 +28,9 @@ gem 'jquery-turbolinks'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations', branch: 'rails5'
 gem 'paper_trail'
 gem 'stripe'
+gem 'stripe_event'
+# Gem for forwarding webhooks to localhost
+gem 'ultrahook'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

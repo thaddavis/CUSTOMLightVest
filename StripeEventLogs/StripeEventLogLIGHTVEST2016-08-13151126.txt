@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-13 15:11:26 -0400 by logger.rb/54362
+D, [2016-08-13T15:11:26.738273 #30248] DEBUG -- : #<Stripe::Event:0x3fe6afa71fb8 id=evt_18i7XOBProJYO6FDQbNhbp7h> JSON: {
+  "id": "evt_18i7XOBProJYO6FDQbNhbp7h",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471115478,
+  "data": {"object":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_907mfI69DJit55",
+  "type": "plan.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18i7XOBProJYO6FDQbNhbp7h","object":"event","api_version":"2016-03-07","created":1471115478,"data":{"object":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null}},"livemode":false,"pending_webhooks":1,"request":"req_907mfI69DJit55","type":"plan.created"}
+}

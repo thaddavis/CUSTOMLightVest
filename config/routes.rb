@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
 
-
+  mount StripeEvent::Engine, at: '/stripe-event' # provide a custom path
 
   # devise_scope :user do
   #   root to: "devise/sessions#new"

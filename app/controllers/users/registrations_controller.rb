@@ -4,6 +4,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :edit
   end
 
+  # DELETE /resource
+  def destroy
+
+    binding.pry
+
+    resultOfDeletingStripeCustomer = DeleteStripeCustomer.call(current_user)
+    if !resultOfDeletingStripeCustomer
+      set_flash_message! :notice, :delete_stripe_customer_error
+      render :edit
+      return
+    end
+
+    resource.destroy
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    set_flash_message! :notice, :destroyed
+    yield resource if block_given?
+    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  end
+
+
   private
 
     def after_sign_up_path_for(resource)

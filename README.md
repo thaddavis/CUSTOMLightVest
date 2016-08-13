@@ -65,3 +65,33 @@ Step #7 Add Plans
 
 Step #8 Configure Stripe
   1. Configure config/initializers/stripe.rb initializers
+
+Step # 9 Stripe Webhooks
+  1. add gem 'ultrahook' to test webhooks
+  2. create stripe_event.rb
+  3. add following code for testing:
+
+    StripeEvent.event_retriever = lambda do |params|
+        if params[:livemode]
+            ::Stripe::Event.retrieve(params[:id])
+        elsif Rails.env.development?
+            # This will return an event as is from the request (security concern in production)
+        ::Stripe::Event.construct_from(params.deep_symbolize_keys)
+        else
+            nil
+        end
+    end
+
+  4. add following code for use in production:
+
+    StripeEvent.event_retriever = lambda do |params|
+       return nil if StripeWebhook.exists?(stripe_id: params[:id])
+       StripeWebhook.create!(stripe_id: params[:id])
+       Stripe::Event.retrieve(params[:id])
+    end
+
+  5. mount StripeEvent::Engine, at: '/stripe-event' # provide a custom path
+
+  6. Add custom code to respond to webhooks: in stripe_event.rb
+
+Step #10
