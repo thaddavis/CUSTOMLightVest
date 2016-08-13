@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :payment_profiles
   post 'payment_profiles/switch_plan/:id' => 'payment_profiles#switch_plan', as: "switch_plan"
+  post 'payment_profiles/add_card/:id' => 'payment_profiles#add_card', as: "add_card"
+  post 'payment_profiles/remove_card/:id/:fingerprint' => 'payment_profiles#remove_card', as: "remove_card"
+  post 'payment_profiles/set_default_card/:id' => 'payment_profiles#set_default_card', as: "set_default_card"
 
   resources :plans
   devise_for :users, :controllers => {

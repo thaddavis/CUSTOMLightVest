@@ -1,5 +1,5 @@
 class PaymentProfilesController < ApplicationController
-  before_action :set_payment_profile, only: [:show, :edit, :update, :destroy, :switch_plan]
+  before_action :set_payment_profile, only: [:show, :edit, :update, :destroy, :switch_plan, :add_card, :remove_card, :set_default_card]
 
   def index
     @payment_profiles = PaymentProfile.all
@@ -26,6 +26,7 @@ class PaymentProfilesController < ApplicationController
       return
     end
 
+    @default_card = customer.default_source
     @cards = customer.sources
   end
 
@@ -64,25 +65,88 @@ class PaymentProfilesController < ApplicationController
 
   def switch_plan
     stripe_customer = FetchStripeCustomer.call(@payment_profile.user)
-
     if @payment_profile.user.payment_profile.errors.any?
       render 'edit'
       return
     end
-
     ChangePlan.call(@payment_profile.user, stripe_customer, params[:stripe_subscription_id], params[:from_plan], params[:plan_id])
-
     if @payment_profile.user.payment_profile.errors.any?
       render 'edit'
       return
     end
-
     subscription = current_user.subscriptions.find_by_stripe_id(params[:stripe_subscription_id])
     if subscription
       subscription.plan = Plan.find_by_stripe_id(params[:plan_id])
       subscription.save!
     end
+    redirect_to edit_payment_profile_path(current_user.payment_profile.id)
+  end
 
+  def add_card
+    stripe_customer = FetchStripeCustomer.call(@payment_profile.user)
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    AddCardToStripeCustomer.call(@payment_profile.user, stripe_customer, params[:stripeToken])
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    flash[:notice] = 'Successfully added card.'
+
+    redirect_to edit_payment_profile_path(current_user.payment_profile.id)
+  end
+
+  def remove_card
+    stripe_customer = FetchStripeCustomer.call(@payment_profile.user)
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    RemoveCardFromStripeCustomer.call(@payment_profile.user, stripe_customer, params[:fingerprint])
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    if stripe_customer.sources.count == 0
+      NoCardsSoDowngradeToFreePlans.call(@payment_profile.user, stripe_customer)
+      if @payment_profile.user.payment_profile.errors.any?
+        render 'edit'
+        return
+      end
+      current_user.subscriptions.each do |s|
+        if s
+          s.plan = Plan.find_by_stripe_id('starter_plan')
+          s.save!
+        end
+      end
+    end
+
+    flash[:notice] = 'Successfully deleted card.'
+
+    redirect_to edit_payment_profile_path(current_user.payment_profile.id)
+  end
+
+  def set_default_card
+
+    stripe_customer = FetchStripeCustomer.call(@payment_profile.user)
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    SetDefaultCardForStripeCustomer.call(@payment_profile.user, stripe_customer, params[:fingerprint])
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'edit'
+      return
+    end
+
+    flash[:notice] = 'Successfully set card as default.'
     redirect_to edit_payment_profile_path(current_user.payment_profile.id)
   end
 

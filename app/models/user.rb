@@ -58,7 +58,6 @@ class User < ApplicationRecord
     end
 
     def StripeCustomerOnSignupError
-      binding.pry
       customer = CreateStripeCustomerOnSignup.call(self)
 
       if customer.errors[:stripe].nil?

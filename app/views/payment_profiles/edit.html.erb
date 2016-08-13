@@ -18,7 +18,7 @@
         <div id="error_explanation" class="alert alert-danger">
           <h2><%= pluralize(@payment_profile.errors.count, "error") %> occurred:</h2>
           <ul>
-          <% @payment_profile.errors.full_messages.each do |message| %>
+          <% @payment_profile.errors.full_messages.each do |message, | %>
             <li><%= message %></li>
           <% end %>
           </ul>
@@ -26,14 +26,8 @@
       <% end %>
 
       <%= render partial: 'plans' %>
-
       <%= render partial: 'credit_card' %>
 
-      ***
-      Allow user to switch plan and add/remove/set default cards.
-      If user tries to switch plan with no default card then take to
-      new card form
-      ***
   </div>
 
 </div>
