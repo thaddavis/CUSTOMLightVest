@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-15 00:54:29 -0400 by logger.rb/54362
+D, [2016-08-15T00:54:29.258326 #36728] DEBUG -- : #<Stripe::Event:0x3fe0ea89df40 id=evt_18id7DBProJYO6FDNXEsUovw> JSON: {
+  "id": "evt_18id7DBProJYO6FDNXEsUovw",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471236863,
+  "data": {"object":{"id":"cus_90eQ0JbpYHWiGa","object":"customer","account_balance":0,"created":1471236863,"currency":"usd","default_source":null,"delinquent":false,"description":null,"discount":null,"email":"qewr@qewr.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/customers/cus_90eQ0JbpYHWiGa/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_90eQ3yjsImUTAK","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471236863,"current_period_end":1473915263,"current_period_start":1471236863,"customer":"cus_90eQ0JbpYHWiGa","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471236863,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_90eQ0JbpYHWiGa/subscriptions"}}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_90eQbjmKS1iXc2",
+  "type": "customer.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18id7DBProJYO6FDNXEsUovw","object":"event","api_version":"2016-03-07","created":1471236863,"data":{"object":{"id":"cus_90eQ0JbpYHWiGa","object":"customer","account_balance":0,"created":1471236863,"currency":"usd","default_source":null,"delinquent":false,"description":null,"discount":null,"email":"qewr@qewr.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/customers/cus_90eQ0JbpYHWiGa/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_90eQ3yjsImUTAK","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471236863,"current_period_end":1473915263,"current_period_start":1471236863,"customer":"cus_90eQ0JbpYHWiGa","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471236863,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_90eQ0JbpYHWiGa/subscriptions"}}},"livemode":false,"pending_webhooks":1,"request":"req_90eQbjmKS1iXc2","type":"customer.created"}
+}

@@ -22,6 +22,7 @@ class User < ApplicationRecord
 
   after_validation :StripeCustomerOnSignupError, :if => :new_record?
   before_save :set_default_role, :if => :new_record?
+  before_save :set_default_currency, :if => :new_record?
   after_save :set_default_payment_profile
   after_save :set_default_subscription
 
@@ -29,6 +30,10 @@ class User < ApplicationRecord
   private
     def set_default_role
       self.role ||= :user
+    end
+
+    def set_default_currency
+      self.role ||= :USD
     end
 
     def set_default_subscription

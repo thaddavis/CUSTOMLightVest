@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-14 23:58:20 -0400 by logger.rb/54362
+D, [2016-08-14T23:58:20.137013 #36420] DEBUG -- : #<Stripe::Event:0x3fe8c9efc418 id=evt_18icEsBProJYO6FDTCeEerPH> JSON: {
+  "id": "evt_18icEsBProJYO6FDTCeEerPH",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471233494,
+  "data": {"object":{"id":"sub_90dVVauiOYlDg7","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471233494,"current_period_end":1473911894,"current_period_start":1471233494,"customer":"cus_90dVNYmHpKu7Rw","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471233494,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_90dVQdk2UekU0T",
+  "type": "customer.subscription.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18icEsBProJYO6FDTCeEerPH","object":"event","api_version":"2016-03-07","created":1471233494,"data":{"object":{"id":"sub_90dVVauiOYlDg7","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471233494,"current_period_end":1473911894,"current_period_start":1471233494,"customer":"cus_90dVNYmHpKu7Rw","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471115478,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471233494,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},"livemode":false,"pending_webhooks":1,"request":"req_90dVQdk2UekU0T","type":"customer.subscription.created"}
+}

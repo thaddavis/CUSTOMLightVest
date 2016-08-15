@@ -31,6 +31,8 @@ gem 'stripe'
 gem 'stripe_event'
 # Gem for forwarding webhooks to localhost
 gem 'ultrahook'
+gem 'money'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
