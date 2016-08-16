@@ -9,7 +9,32 @@ class PaymentProfilesController < ApplicationController
   def show
     authorize @payment_profile
     customer = FetchStripeCustomer.call(@payment_profile.user)
-    customerJSON = JSON.parse(customer.to_s)
+    if @payment_profile.user.payment_profile.errors.any?
+      render 'show'
+      return
+    end
+
+    @charges = []
+    Charge.where(:user_id => current_user.id).each do |c|
+      stripe_charge = FetchStripeCharge.call(@payment_profile.user, c.charge_stripe_id)
+      if @payment_profile.user.payment_profile.errors.any?
+        render 'show'
+        return
+      end
+      @charges << stripe_charge
+    end
+
+    @invoices = []
+
+    Invoice.where(:user_id => current_user.id).each do |c|
+      stripe_invoice = FetchStripeInvoice.call(@payment_profile.user, c.invoice_stripe_id)
+      if @payment_profile.user.payment_profile.errors.any?
+        render 'show'
+        return
+      end
+      @invoices << stripe_invoice
+    end
+
   end
 
   def new
@@ -19,12 +44,26 @@ class PaymentProfilesController < ApplicationController
   def edit
     authorize @payment_profile
     customer = FetchStripeCustomer.call(@payment_profile.user)
-    @cards = []
-
     if @payment_profile.user.payment_profile.errors.any?
       render 'edit'
       return
     end
+
+    # Sync Plan With Stripe
+    customer.subscriptions.each do |s|
+      sub = current_user.subscriptions.find_by_stripe_id(s.id)
+      plan = Plan.find_by_stripe_id(s.plan.id)
+      if !sub
+        subscription = Subscription.new(plan_id: plan.id, user_id: current_user.id, stripe_id: s.id)
+        subscription.save!
+      else
+        sub.plan_id = plan.id
+        sub.save!
+      end
+    end
+    # Sync Plan With Stripe
+
+    @cards = []
 
     @default_card = customer.default_source
     @cards = customer.sources
@@ -83,6 +122,7 @@ class PaymentProfilesController < ApplicationController
   end
 
   def add_card
+
     stripe_customer = FetchStripeCustomer.call(@payment_profile.user)
     if @payment_profile.user.payment_profile.errors.any?
       render 'edit'

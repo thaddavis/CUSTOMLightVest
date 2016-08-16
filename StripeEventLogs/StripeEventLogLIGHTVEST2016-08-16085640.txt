@@ -1,0 +1,29 @@
+# Logfile created on 2016-08-16 08:56:40 -0400 by logger.rb/54362
+D, [2016-08-16T08:56:40.293033 #56159] DEBUG -- : #<Stripe::Event:0x3fe9ea357eb0 id=evt_18j77IBProJYO6FDS6ZQsLPb> JSON: {
+  "id": "evt_18j77IBProJYO6FDS6ZQsLPb",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471352188,
+  "data": {"object":{"id":"ii_18j77IBProJYO6FDOBv7u2d5","object":"invoiceitem","amount":99917,"currency":"usd","customer":"cus_918oOFtATK68c9","date":1471352188,"description":"Remaining time on Gold Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471352188,"end":1474028373},"plan":{"id":"gold_plan","object":"plan","amount":100000,"created":1471320131,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Gold Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_918ogmniua4UGP"}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_919Qnr5uBwCQEf",
+  "type": "invoiceitem.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18j77IBProJYO6FDS6ZQsLPb","object":"event","api_version":"2016-03-07","created":1471352188,"data":{"object":{"id":"ii_18j77IBProJYO6FDOBv7u2d5","object":"invoiceitem","amount":99917,"currency":"usd","customer":"cus_918oOFtATK68c9","date":1471352188,"description":"Remaining time on Gold Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471352188,"end":1474028373},"plan":{"id":"gold_plan","object":"plan","amount":100000,"created":1471320131,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Gold Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_918ogmniua4UGP"}},"livemode":false,"pending_webhooks":1,"request":"req_919Qnr5uBwCQEf","type":"invoiceitem.created"}
+}
+D, [2016-08-16T08:56:40.347228 #56159] DEBUG -- : #<Stripe::Event:0x3fe9ea1ee8bc id=evt_18j77IBProJYO6FDaW8O8DKB> JSON: {
+  "id": "evt_18j77IBProJYO6FDaW8O8DKB",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471352188,
+  "data": {"object":{"id":"ii_18j77IBProJYO6FDugaeWtqe","object":"invoiceitem","amount":-9992,"currency":"usd","customer":"cus_918oOFtATK68c9","date":1471352188,"description":"Unused time on Premium Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471352188,"end":1474028373},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_918ogmniua4UGP"}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_919Qnr5uBwCQEf",
+  "type": "invoiceitem.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18j77IBProJYO6FDaW8O8DKB","object":"event","api_version":"2016-03-07","created":1471352188,"data":{"object":{"id":"ii_18j77IBProJYO6FDugaeWtqe","object":"invoiceitem","amount":-9992,"currency":"usd","customer":"cus_918oOFtATK68c9","date":1471352188,"description":"Unused time on Premium Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471352188,"end":1474028373},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_918ogmniua4UGP"}},"livemode":false,"pending_webhooks":1,"request":"req_919Qnr5uBwCQEf","type":"invoiceitem.created"}
+}

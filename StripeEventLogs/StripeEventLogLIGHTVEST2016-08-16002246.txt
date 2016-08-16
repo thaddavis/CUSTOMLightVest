@@ -1,0 +1,43 @@
+# Logfile created on 2016-08-16 00:22:46 -0400 by logger.rb/54362
+D, [2016-08-16T00:22:46.344574 #55454] DEBUG -- : #<Stripe::Event:0x3ff91d308418 id=evt_18iz5yBProJYO6FDSQiIC1EP> JSON: {
+  "id": "evt_18iz5yBProJYO6FDSQiIC1EP",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471321354,
+  "data": {"object":{"id":"in_18iz5yBProJYO6FD7vqIoDrq","object":"invoice","amount_due":0,"application_fee":null,"attempt_count":0,"attempted":true,"charge":null,"closed":true,"currency":"usd","customer":"cus_9118uJDESHYtGU","date":1471321354,"description":null,"discount":null,"ending_balance":0,"forgiven":false,"lines":{"object":"list","data":[{"id":"sub_9118fxoNUNz3dr","object":"line_item","amount":0,"currency":"usd","description":null,"discountable":true,"livemode":false,"metadata":{},"period":{"start":1471321354,"end":1473999754},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"proration":false,"quantity":1,"subscription":null,"type":"subscription"}],"has_more":false,"total_count":1,"url":"/v1/invoices/in_18iz5yBProJYO6FD7vqIoDrq/lines"},"livemode":false,"metadata":{},"next_payment_attempt":null,"paid":true,"period_end":1471321354,"period_start":1471321354,"receipt_number":null,"starting_balance":0,"statement_descriptor":null,"subscription":"sub_9118fxoNUNz3dr","subtotal":0,"tax":null,"tax_percent":null,"total":0,"webhooks_delivered_at":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_9118JymB2NNU0d",
+  "type": "invoice.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iz5yBProJYO6FDSQiIC1EP","object":"event","api_version":"2016-03-07","created":1471321354,"data":{"object":{"id":"in_18iz5yBProJYO6FD7vqIoDrq","object":"invoice","amount_due":0,"application_fee":null,"attempt_count":0,"attempted":true,"charge":null,"closed":true,"currency":"usd","customer":"cus_9118uJDESHYtGU","date":1471321354,"description":null,"discount":null,"ending_balance":0,"forgiven":false,"lines":{"object":"list","data":[{"id":"sub_9118fxoNUNz3dr","object":"line_item","amount":0,"currency":"usd","description":null,"discountable":true,"livemode":false,"metadata":{},"period":{"start":1471321354,"end":1473999754},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"proration":false,"quantity":1,"subscription":null,"type":"subscription"}],"has_more":false,"total_count":1,"url":"/v1/invoices/in_18iz5yBProJYO6FD7vqIoDrq/lines"},"livemode":false,"metadata":{},"next_payment_attempt":null,"paid":true,"period_end":1471321354,"period_start":1471321354,"receipt_number":null,"starting_balance":0,"statement_descriptor":null,"subscription":"sub_9118fxoNUNz3dr","subtotal":0,"tax":null,"tax_percent":null,"total":0,"webhooks_delivered_at":null}},"livemode":false,"pending_webhooks":1,"request":"req_9118JymB2NNU0d","type":"invoice.created"}
+}
+D, [2016-08-16T00:22:46.367225 #55454] DEBUG -- : #<Stripe::Event:0x3ff91ddac784 id=evt_18iz5yBProJYO6FDmPT42ZrG> JSON: {
+  "id": "evt_18iz5yBProJYO6FDmPT42ZrG",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471321354,
+  "data": {"object":{"id":"cus_9118uJDESHYtGU","object":"customer","account_balance":0,"created":1471321354,"currency":"usd","default_source":null,"delinquent":false,"description":null,"discount":null,"email":"d@d.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/customers/cus_9118uJDESHYtGU/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_9118fxoNUNz3dr","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471321354,"current_period_end":1473999754,"current_period_start":1471321354,"customer":"cus_9118uJDESHYtGU","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321354,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_9118uJDESHYtGU/subscriptions"}}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_9118JymB2NNU0d",
+  "type": "customer.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iz5yBProJYO6FDmPT42ZrG","object":"event","api_version":"2016-03-07","created":1471321354,"data":{"object":{"id":"cus_9118uJDESHYtGU","object":"customer","account_balance":0,"created":1471321354,"currency":"usd","default_source":null,"delinquent":false,"description":null,"discount":null,"email":"d@d.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/customers/cus_9118uJDESHYtGU/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_9118fxoNUNz3dr","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471321354,"current_period_end":1473999754,"current_period_start":1471321354,"customer":"cus_9118uJDESHYtGU","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321354,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_9118uJDESHYtGU/subscriptions"}}},"livemode":false,"pending_webhooks":1,"request":"req_9118JymB2NNU0d","type":"customer.created"}
+}
+D, [2016-08-16T00:22:46.390142 #55454] DEBUG -- : #<Stripe::Event:0x3ff91d68cd3c id=evt_18iz5yBProJYO6FDiN2OER3R> JSON: {
+  "id": "evt_18iz5yBProJYO6FDiN2OER3R",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471321354,
+  "data": {"object":{"id":"sub_9118fxoNUNz3dr","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471321354,"current_period_end":1473999754,"current_period_start":1471321354,"customer":"cus_9118uJDESHYtGU","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321354,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_9118JymB2NNU0d",
+  "type": "customer.subscription.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iz5yBProJYO6FDiN2OER3R","object":"event","api_version":"2016-03-07","created":1471321354,"data":{"object":{"id":"sub_9118fxoNUNz3dr","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471321354,"current_period_end":1473999754,"current_period_start":1471321354,"customer":"cus_9118uJDESHYtGU","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321354,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},"livemode":false,"pending_webhooks":1,"request":"req_9118JymB2NNU0d","type":"customer.subscription.created"}
+}

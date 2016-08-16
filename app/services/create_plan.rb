@@ -9,15 +9,11 @@ class CreatePlan
 
     # plan = Plan.find_by_stripe_id(options[:stripe_id])
     # plan.delete if plan
-    binding.pry
 
     plan = Plan.new(options)
     if !plan.valid?
       return plan
     end
-
-
-    binding.pry
 
     begin
       Stripe::Plan.create(
@@ -28,17 +24,11 @@ class CreatePlan
         name: options[:name]
       )
 
-      binding.pry
-
     rescue Stripe::StripeError => e
-      binding.pry
-
       plan = Plan.new(options)
       plan.errors[:base] << e.message
       return plan
     end
-
-    binding.pry
 
     plan.save
     return plan

@@ -1,0 +1,29 @@
+# Logfile created on 2016-08-16 00:08:27 -0400 by logger.rb/54362
+D, [2016-08-16T00:08:27.221736 #55022] DEBUG -- : #<Stripe::Event:0x3fd11c464ce0 id=evt_18iysCBProJYO6FD9NqHaplG> JSON: {
+  "id": "evt_18iysCBProJYO6FD9NqHaplG",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471320500,
+  "data": {"object":{"id":"card_18iysBBProJYO6FD5zjmlkef","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_910rY1P7xiJwCj","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_910uHFtmR3TxmF",
+  "type": "customer.source.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iysCBProJYO6FD9NqHaplG","object":"event","api_version":"2016-03-07","created":1471320500,"data":{"object":{"id":"card_18iysBBProJYO6FD5zjmlkef","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_910rY1P7xiJwCj","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}},"livemode":false,"pending_webhooks":1,"request":"req_910uHFtmR3TxmF","type":"customer.source.created"}
+}
+D, [2016-08-16T00:08:27.623985 #55022] DEBUG -- : #<Stripe::Event:0x3fd11d0997b8 id=evt_18iysCBProJYO6FDk2torERl> JSON: {
+  "id": "evt_18iysCBProJYO6FDk2torERl",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471320500,
+  "data": {"object":{"id":"cus_910rY1P7xiJwCj","object":"customer","account_balance":0,"created":1471320365,"currency":"usd","default_source":"card_18iysBBProJYO6FD5zjmlkef","delinquent":false,"description":null,"discount":null,"email":"b@b.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[{"id":"card_18iysBBProJYO6FD5zjmlkef","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_910rY1P7xiJwCj","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_910rY1P7xiJwCj/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_910ryjzV28daSf","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471320365,"current_period_end":1473998765,"current_period_start":1471320365,"customer":"cus_910rY1P7xiJwCj","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471320365,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_910rY1P7xiJwCj/subscriptions"}},"previous_attributes":{"default_source":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_910uHFtmR3TxmF",
+  "type": "customer.updated",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iysCBProJYO6FDk2torERl","object":"event","api_version":"2016-03-07","created":1471320500,"data":{"object":{"id":"cus_910rY1P7xiJwCj","object":"customer","account_balance":0,"created":1471320365,"currency":"usd","default_source":"card_18iysBBProJYO6FD5zjmlkef","delinquent":false,"description":null,"discount":null,"email":"b@b.com","livemode":false,"metadata":{},"shipping":null,"sources":{"object":"list","data":[{"id":"card_18iysBBProJYO6FD5zjmlkef","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_910rY1P7xiJwCj","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_910rY1P7xiJwCj/sources"},"subscriptions":{"object":"list","data":[{"id":"sub_910ryjzV28daSf","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471320365,"current_period_end":1473998765,"current_period_start":1471320365,"customer":"cus_910rY1P7xiJwCj","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471320365,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}],"has_more":false,"total_count":1,"url":"/v1/customers/cus_910rY1P7xiJwCj/subscriptions"}},"previous_attributes":{"default_source":null}},"livemode":false,"pending_webhooks":1,"request":"req_910uHFtmR3TxmF","type":"customer.updated"}
+}

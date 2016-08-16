@@ -10,21 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815045738) do
+ActiveRecord::Schema.define(version: 20160816023201) do
 
   create_table "charges", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "subscription_id"
+    t.string   "invoice_stripe_id"
     t.string   "charge_stripe_id"
     t.string   "type_of_charge"
     t.integer  "amount"
-    t.string   "additional_charges"
+    t.string   "description"
     t.string   "date_of_charge"
     t.string   "card_charged"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["subscription_id"], name: "index_charges_on_subscription_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["user_id"], name: "index_charges_on_user_id"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "invoice_stripe_id"
+    t.string   "subscription_stripe_id"
+    t.string   "type_of_invoice"
+    t.integer  "amount"
+    t.string   "description"
+    t.string   "date_of_invoice"
+    t.string   "card_charged"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
   create_table "payment_profiles", force: :cascade do |t|

@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-16 00:35:27 -0400 by logger.rb/54362
+D, [2016-08-16T00:35:27.379855 #55861] DEBUG -- : #<Stripe::Event:0x3fd4dd14ee4c id=evt_18izIKBProJYO6FDRB2nC57a> JSON: {
+  "id": "evt_18izIKBProJYO6FDRB2nC57a",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471322120,
+  "data": {"object":{"id":"card_18izIIBProJYO6FDW7VN7dxH","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_911J3yFrXm3yvg","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_911KA8nHUOxoek",
+  "type": "customer.source.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18izIKBProJYO6FDRB2nC57a","object":"event","api_version":"2016-03-07","created":1471322120,"data":{"object":{"id":"card_18izIIBProJYO6FDW7VN7dxH","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_911J3yFrXm3yvg","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null}},"livemode":false,"pending_webhooks":1,"request":"req_911KA8nHUOxoek","type":"customer.source.created"}
+}

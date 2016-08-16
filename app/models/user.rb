@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   has_many :subscriptions, :dependent => :destroy
+  has_many :invoices, :dependent => :destroy
+  has_many :charges, :dependent => :destroy
   has_one :payment_profile, :dependent => :destroy
 
   validates :first_name, presence: true

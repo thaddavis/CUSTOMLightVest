@@ -1,0 +1,29 @@
+# Logfile created on 2016-08-16 08:19:39 -0400 by logger.rb/54362
+D, [2016-08-16T08:19:39.218903 #56159] DEBUG -- : #<Stripe::Event:0x3fe9ea27abdc id=evt_18j6XZBProJYO6FDN5nxLb9K> JSON: {
+  "id": "evt_18j6XZBProJYO6FDN5nxLb9K",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471349973,
+  "data": {"object":{"id":"sub_918ogmniua4UGP","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471349911,"current_period_end":1474028373,"current_period_start":1471349973,"customer":"cus_918oOFtATK68c9","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471349973,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"current_period_end":1474028311,"current_period_start":1471349911,"plan":{"id":"starter_plan","amount":0,"name":"Starter Plan"},"start":1471349911}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_918pTWyEMuOUyt",
+  "type": "customer.subscription.updated",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18j6XZBProJYO6FDN5nxLb9K","object":"event","api_version":"2016-03-07","created":1471349973,"data":{"object":{"id":"sub_918ogmniua4UGP","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471349911,"current_period_end":1474028373,"current_period_start":1471349973,"customer":"cus_918oOFtATK68c9","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471349973,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"current_period_end":1474028311,"current_period_start":1471349911,"plan":{"id":"starter_plan","amount":0,"name":"Starter Plan"},"start":1471349911}},"livemode":false,"pending_webhooks":1,"request":"req_918pTWyEMuOUyt","type":"customer.subscription.updated"}
+}
+D, [2016-08-16T08:19:39.689229 #56159] DEBUG -- : #<Stripe::Event:0x3fe9ea1cbc90 id=evt_18j6XZBProJYO6FDcEpBB6m3> JSON: {
+  "id": "evt_18j6XZBProJYO6FDcEpBB6m3",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471349973,
+  "data": {"object":{"id":"ch_18j6XZBProJYO6FDJsLIQZog","object":"charge","amount":10000,"amount_refunded":0,"application_fee":null,"balance_transaction":"txn_18j6XZBProJYO6FDJGf9ecXW","captured":true,"created":1471349973,"currency":"usd","customer":"cus_918oOFtATK68c9","description":null,"destination":null,"dispute":null,"failure_code":null,"failure_message":null,"fraud_details":{},"invoice":"in_18j6XZBProJYO6FDRWcq2oWy","livemode":false,"metadata":{},"order":null,"paid":true,"receipt_email":null,"receipt_number":null,"refunded":false,"refunds":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/charges/ch_18j6XZBProJYO6FDJsLIQZog/refunds"},"shipping":null,"source":{"id":"card_18j6XLBProJYO6FD6XTrzYsU","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_918oOFtATK68c9","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null},"source_transfer":null,"statement_descriptor":null,"status":"succeeded"}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_918pTWyEMuOUyt",
+  "type": "charge.succeeded",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18j6XZBProJYO6FDcEpBB6m3","object":"event","api_version":"2016-03-07","created":1471349973,"data":{"object":{"id":"ch_18j6XZBProJYO6FDJsLIQZog","object":"charge","amount":10000,"amount_refunded":0,"application_fee":null,"balance_transaction":"txn_18j6XZBProJYO6FDJGf9ecXW","captured":true,"created":1471349973,"currency":"usd","customer":"cus_918oOFtATK68c9","description":null,"destination":null,"dispute":null,"failure_code":null,"failure_message":null,"fraud_details":{},"invoice":"in_18j6XZBProJYO6FDRWcq2oWy","livemode":false,"metadata":{},"order":null,"paid":true,"receipt_email":null,"receipt_number":null,"refunded":false,"refunds":{"object":"list","data":[],"has_more":false,"total_count":0,"url":"/v1/charges/ch_18j6XZBProJYO6FDJsLIQZog/refunds"},"shipping":null,"source":{"id":"card_18j6XLBProJYO6FD6XTrzYsU","object":"card","address_city":null,"address_country":null,"address_line1":null,"address_line1_check":null,"address_line2":null,"address_state":null,"address_zip":null,"address_zip_check":null,"brand":"Visa","country":"US","customer":"cus_918oOFtATK68c9","cvc_check":"pass","dynamic_last4":null,"exp_month":12,"exp_year":2019,"fingerprint":"cPUtU0yPH2DCsEqm","funding":"credit","last4":"4242","metadata":{},"name":null,"tokenization_method":null},"source_transfer":null,"statement_descriptor":null,"status":"succeeded"}},"livemode":false,"pending_webhooks":1,"request":"req_918pTWyEMuOUyt","type":"charge.succeeded"}
+}

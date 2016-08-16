@@ -19,24 +19,29 @@ end
 StripeEvent.configure do |events|
 
   events.subscribe 'charge.succeeded' do |event|
-    charge = event.data.object
-    StripeMailer.admin_charge_succeeded(charge).deliver
+    StripeMailer.charge_succeeded(event.data.object).deliver
   end
 
   events.subscribe 'charge.failed' do |event|
-    binding.pry
+
+  end
+
+  events.subscribe 'invoice.created' do |event|
+    StripeMailer.invoice_created(event.data.object).deliver
+  end
+
+  events.subscribe 'invoiceitem.created'  do |event|
+    StripeMailer.invoice_item_created(event.data.object).deliver
   end
 
   events.subscribe 'invoice.payment_succeeded' do |event|
-    StripeMailer.invoice_payment_succeeded(event.data.object).deliver
+
   end
 
   events.subscribe 'invoice.payment_failed' do |event|
-    binding.pry
   end
 
   events.subscribe 'customer.subscription.deleted' do |event|
-    binding.pry
   end
 
   events.all do |event|

@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-16 00:17:37 -0400 by logger.rb/54362
+D, [2016-08-16T00:17:37.015588 #55258] DEBUG -- : #<Stripe::Event:0x3fd5584a3018 id=evt_18iz11BProJYO6FDI2pPiLzC> JSON: {
+  "id": "evt_18iz11BProJYO6FDI2pPiLzC",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471321047,
+  "data": {"object":{"id":"sub_91103wUsk4ncOT","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471320877,"current_period_end":1473999447,"current_period_start":1471321047,"customer":"cus_91102MCVs11CXs","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321047,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"current_period_end":1473999277,"current_period_start":1471320877,"plan":{"id":"starter_plan","amount":0,"name":"Starter Plan"},"start":1471320877}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_9113Eu9gLpy2Dh",
+  "type": "customer.subscription.updated",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18iz11BProJYO6FDI2pPiLzC","object":"event","api_version":"2016-03-07","created":1471321047,"data":{"object":{"id":"sub_91103wUsk4ncOT","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471320877,"current_period_end":1473999447,"current_period_start":1471321047,"customer":"cus_91102MCVs11CXs","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471321047,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"current_period_end":1473999277,"current_period_start":1471320877,"plan":{"id":"starter_plan","amount":0,"name":"Starter Plan"},"start":1471320877}},"livemode":false,"pending_webhooks":1,"request":"req_9113Eu9gLpy2Dh","type":"customer.subscription.updated"}
+}

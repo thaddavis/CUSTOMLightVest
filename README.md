@@ -63,6 +63,9 @@ Step #7 Add Plans
   CreatePlan.call(stripe_id: 'premium_plan', name: 'Premium Plan', amount: 10000, interval: 'month', description: '<h4 class="text-center">Premium</h4><ul><li> $100.00 + monthly consultation fees </li><li> Unlimited use of all our software tools </li><li> 90-day money-back guarantee </li><li> Customized financial advice </li></ul>', published: true)
   CreatePlan.call(stripe_id: 'gold_plan', name: 'Gold Plan', amount: 100000, interval: 'month', description: '<h4 class="text-center">Gold</h4><ul><li> $200.00 + monthly consultation fees </li><li> 90-day money-back guarantee </li><li> Personalized financial advice </li></ul>', published: true)
 
+  Useful:
+    exec(%Q{echo "CreatePlan.call(stripe_id: 'starter_plan', name: 'Starter Plan', amount: 0, interval: 'month', description: '<h4 class="text-center">Starter</h4><ul><li> FREE </li><li> Trial usage of our tools </li><li> Automated financial advice </li></ul>', published: true); CreatePlan.call(stripe_id: 'premium_plan', name: 'Premium Plan', amount: 10000, interval: 'month', description: '<h4 class="text-center">Premium</h4><ul><li> $100.00 + monthly consultation fees </li><li> Unlimited use of all our software tools </li><li> 90-day money-back guarantee </li><li> Customized financial advice </li></ul>', published: true); CreatePlan.call(stripe_id: 'gold_plan', name: 'Gold Plan', amount: 100000, interval: 'month', description: '<h4 class="text-center">Gold</h4><ul><li> $200.00 + monthly consultation fees </li><li> 90-day money-back guarantee </li><li> Personalized financial advice </li></ul>', published: true);" | rails c})
+
 Step #8 Configure Stripe
   1. Configure config/initializers/stripe.rb initializers
 
@@ -95,3 +98,9 @@ Step # 9 Stripe Webhooks
   6. Add custom code to respond to webhooks: in stripe_event.rb
 
 Step #10
+  Useful:
+    exec(%Q{echo 'User.delete_all; Subscription.delete_all; PaymentProfile.delete_all; Charge.delete_all; Plan.delete_all' | rails c})
+
+
+
+

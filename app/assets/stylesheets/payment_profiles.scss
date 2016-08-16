@@ -10,3 +10,28 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f4f4f4}
+tr:hover {background-color: #f0f0f0}
+
+th.charges {
+    border: 1px solid #FFF;
+    background-color: #4CAF50;
+    color: white;
+}
+
+th.invoices {
+    border: 1px solid #FFF;
+    background-color: #FFAF50;
+    color: white;
+}
