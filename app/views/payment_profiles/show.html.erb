@@ -25,45 +25,40 @@
     <% end %>
 
     <p>
-      <% @charges.each do |s| %>
 
-        <% #binding.pry %>
-
-        <h3 class="text-center" style="letter-spacing: 4px;">Charges</h3>
+      <h3 class="text-center" style="letter-spacing: 4px;"><!-- Charges --></h3>
         <table>
-          <tr style="letter-spacing: 2px;">
+          <tr style="letter-spacing: 2px; text-shadow: 1px 1px #000000;">
             <th class="charges">Amount</th>
             <th class="charges">Card Number</th>
             <th class="charges">Date Of Charge</th>
           </tr>
-          <tr>
-            <td><%= Money.new(s.amount, s.currency).format %></td>
-            <td>(last digits) <%= s.source.last4 %></td>
-            <td><%= DateTime.strptime(s.created.to_s,'%s').to_date %></td>
-          </tr>
+          <% @charges.each do |s| %>
+              <tr>
+                <td><%= Money.new(s.amount, s.currency).format %></td>
+                <td>(last digits) <%= s.source.last4 %></td>
+                <td><%= DateTime.strptime(s.created.to_s,'%s').to_date %></td>
+              </tr>
+          <% end %>
         </table>
-
-      <% end %>
     </p>
 
     <p>
-      <% @invoices.each do |s| %>
+      <h3 class="text-center" style="letter-spacing: 4px;"><!-- Invoices --></h3>
 
-        <% binding.pry %>
-        <h3 class="text-center" style="letter-spacing: 4px;">Invoices</h3>
         <table>
-          <tr style="letter-spacing: 1px;">
-            <th class="invoices">Amount</th>
-            <th class="invoices">Card Number</th>
-            <th class="invoices">Date Of Charge</th>
+          <tr style="letter-spacing: 2px; text-shadow: 1px 1px #000000;">
+            <th class="invoices">Amount Due</th>
+            <th class="invoices">Date Of Invoice</th>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+
+          <% @invoices.each do |s| %>
+              <tr>
+                <td><%= Money.new(s.total, s.currency).format %></td>
+                <td><%= DateTime.strptime(s.date.to_s,'%s').to_date %></td>
+              </tr>
+          <% end %>
         </table>
-      <% end %>
     </p>
 
   </div>

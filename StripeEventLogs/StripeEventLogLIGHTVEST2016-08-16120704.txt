@@ -1,0 +1,29 @@
+# Logfile created on 2016-08-16 12:07:04 -0400 by logger.rb/54362
+D, [2016-08-16T12:07:04.386092 #63075] DEBUG -- : #<Stripe::Event:0x3fd8508a4720 id=evt_18jA5fBProJYO6FDjy8HUk4S> JSON: {
+  "id": "evt_18jA5fBProJYO6FDjy8HUk4S",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471363619,
+  "data": {"object":{"id":"sub_91CND0mS2Cw2GX","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471363184,"current_period_end":1474041992,"current_period_start":1471363592,"customer":"cus_91CNvBJsCNkUSg","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"gold_plan","object":"plan","amount":100000,"created":1471320131,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Gold Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471363619,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"plan":{"id":"premium_plan","amount":10000,"created":1471320130,"name":"Premium Plan"},"start":1471363592}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_91CUbst2x8AC3s",
+  "type": "customer.subscription.updated",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18jA5fBProJYO6FDjy8HUk4S","object":"event","api_version":"2016-03-07","created":1471363619,"data":{"object":{"id":"sub_91CND0mS2Cw2GX","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471363184,"current_period_end":1474041992,"current_period_start":1471363592,"customer":"cus_91CNvBJsCNkUSg","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"gold_plan","object":"plan","amount":100000,"created":1471320131,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Gold Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471363619,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null},"previous_attributes":{"plan":{"id":"premium_plan","amount":10000,"created":1471320130,"name":"Premium Plan"},"start":1471363592}},"livemode":false,"pending_webhooks":1,"request":"req_91CUbst2x8AC3s","type":"customer.subscription.updated"}
+}
+D, [2016-08-16T12:07:04.649772 #63075] DEBUG -- : #<Stripe::Event:0x3fd85ffc92d0 id=evt_18jA5fBProJYO6FDVNE2YGp5> JSON: {
+  "id": "evt_18jA5fBProJYO6FDVNE2YGp5",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471363619,
+  "data": {"object":{"id":"ii_18jA5fBProJYO6FDHS0ldFz6","object":"invoiceitem","amount":-10000,"currency":"usd","customer":"cus_91CNvBJsCNkUSg","date":1471363619,"description":"Unused time on Premium Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471363619,"end":1474041992},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_91CND0mS2Cw2GX"}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_91CUbst2x8AC3s",
+  "type": "invoiceitem.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18jA5fBProJYO6FDVNE2YGp5","object":"event","api_version":"2016-03-07","created":1471363619,"data":{"object":{"id":"ii_18jA5fBProJYO6FDHS0ldFz6","object":"invoiceitem","amount":-10000,"currency":"usd","customer":"cus_91CNvBJsCNkUSg","date":1471363619,"description":"Unused time on Premium Plan after 16 Aug 2016","discountable":false,"invoice":null,"livemode":false,"metadata":{},"period":{"start":1471363619,"end":1474041992},"plan":{"id":"premium_plan","object":"plan","amount":10000,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Premium Plan","statement_descriptor":null,"trial_period_days":null},"proration":true,"quantity":1,"subscription":"sub_91CND0mS2Cw2GX"}},"livemode":false,"pending_webhooks":1,"request":"req_91CUbst2x8AC3s","type":"invoiceitem.created"}
+}

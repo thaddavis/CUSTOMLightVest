@@ -1,0 +1,15 @@
+# Logfile created on 2016-08-16 11:29:48 -0400 by logger.rb/54362
+D, [2016-08-16T11:29:48.595645 #62075] DEBUG -- : #<Stripe::Event:0x3fda32290df0 id=evt_18j9VXBProJYO6FDm6PmfEA8> JSON: {
+  "id": "evt_18j9VXBProJYO6FDm6PmfEA8",
+  "object": "event",
+  "api_version": "2016-03-07",
+  "created": 1471361379,
+  "data": {"object":{"id":"sub_91Bt2jJeGg3f7G","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471361379,"current_period_end":1474039779,"current_period_start":1471361379,"customer":"cus_91BtE5uG66Cz4L","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471361379,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": "req_91Bt5oyAIv0Car",
+  "type": "customer.subscription.created",
+  "controller": "stripe_event/webhook",
+  "action": "event",
+  "webhook": {"id":"evt_18j9VXBProJYO6FDm6PmfEA8","object":"event","api_version":"2016-03-07","created":1471361379,"data":{"object":{"id":"sub_91Bt2jJeGg3f7G","object":"subscription","application_fee_percent":null,"cancel_at_period_end":false,"canceled_at":null,"created":1471361379,"current_period_end":1474039779,"current_period_start":1471361379,"customer":"cus_91BtE5uG66Cz4L","discount":null,"ended_at":null,"livemode":false,"metadata":{},"plan":{"id":"starter_plan","object":"plan","amount":0,"created":1471320130,"currency":"usd","interval":"month","interval_count":1,"livemode":false,"metadata":{},"name":"Starter Plan","statement_descriptor":null,"trial_period_days":null},"quantity":1,"start":1471361379,"status":"active","tax_percent":null,"trial_end":null,"trial_start":null}},"livemode":false,"pending_webhooks":1,"request":"req_91Bt5oyAIv0Car","type":"customer.subscription.created"}
+}

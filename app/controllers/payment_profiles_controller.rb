@@ -35,6 +35,8 @@ class PaymentProfilesController < ApplicationController
       @invoices << stripe_invoice
     end
 
+    @invoices = @invoices.compact
+
   end
 
   def new

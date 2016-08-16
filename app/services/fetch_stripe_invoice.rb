@@ -8,14 +8,15 @@ class FetchStripeInvoice
       rescue Stripe::StripeError => e
         user.payment_profile.errors[:stripe] << e.message
       end
-    else
-    # invoice item
-      begin
-        invoice = Stripe::InvoiceItem.retrieve(invoice_id)
-        invoice
-      rescue Stripe::StripeError => e
-        user.payment_profile.errors[:stripe] << e.message
-      end
     end
+    # invoice item
+    # else
+    #   begin
+    #     invoice = Stripe::InvoiceItem.retrieve(invoice_id)
+    #     invoice
+    #   rescue Stripe::StripeError => e
+    #     user.payment_profile.errors[:stripe] << e.message
+    #   end
+    # end
   end
 end
